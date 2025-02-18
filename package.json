@@ -1,0 +1,48 @@
+{
+  "main": "main.js",
+  "name": "ai-scheduling",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Yazan Agha-Schrader",
+  "license": "ISC",
+  "description": "AI Software tailored for AirConnect",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "package": "electron-packager . --out=dist --overwrite"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.ai.scheduler",
+    "productName": "ai-scheduler",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility",
+      "icon": "assets/icons/icon.png"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icons/icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-builder": "^24.13.3"
+  }
+}
